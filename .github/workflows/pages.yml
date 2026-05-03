@@ -1,0 +1,61 @@
+# docs/PRIVACY.md だけを GitHub Pages に公開するためのワークフロー。
+# 他の docs/ 配下は意図的に公開対象から除外している。
+name: Deploy Privacy Policy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/PRIVACY.md'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Stage only PRIVACY.md as the site source
+        run: |
+          mkdir -p pages-src/privacy-policy
+          cp docs/PRIVACY.md pages-src/privacy-policy/index.md
+          cat > pages-src/_config.yml <<'YML'
+          title: X OFF Privacy Policy
+          description: Privacy policy for the X OFF Chrome extension.
+          YML
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./pages-src
+          destination: ./_site
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

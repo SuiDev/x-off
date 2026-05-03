@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title data-i18n="popupTitle">X Scroll Limiter</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="x-scroll-limiter__container">
+      <h1 class="x-scroll-limiter__heading" data-i18n="popupTitle">X Scroll Limiter</h1>
+
+      <section
+        id="x-scroll-limiter-stats"
+        class="x-scroll-limiter__stats"
+        aria-label="usage"
+      >
+        <div class="x-scroll-limiter__stat">
+          <span class="x-scroll-limiter__stat-label" data-i18n="popupElapsedLabel">Elapsed</span>
+          <span id="x-scroll-limiter-elapsed" class="x-scroll-limiter__stat-value">--</span>
+        </div>
+        <div class="x-scroll-limiter__stat">
+          <span class="x-scroll-limiter__stat-label" data-i18n="popupLimitLabel">Limit</span>
+          <span id="x-scroll-limiter-limit" class="x-scroll-limiter__stat-value">--</span>
+        </div>
+        <div class="x-scroll-limiter__stat">
+          <span class="x-scroll-limiter__stat-label" data-i18n="popupRemainingLabel">Remaining</span>
+          <span id="x-scroll-limiter-remaining" class="x-scroll-limiter__stat-value">--</span>
+        </div>
+      </section>
+
+      <p
+        id="x-scroll-limiter-no-limit"
+        class="x-scroll-limiter__notice"
+        data-i18n="popupNoLimitSet"
+        hidden
+      >No limit set yet — set a value below to start.</p>
+
+      <form id="x-scroll-limiter-limit-form" class="x-scroll-limiter__form" novalidate>
+        <label for="x-scroll-limiter-limit-input" data-i18n="popupChangeLimitLabel">
+          Change limit (minutes)
+        </label>
+        <div class="x-scroll-limiter__input-row">
+          <input
+            type="number"
+            id="x-scroll-limiter-limit-input"
+            min="1"
+            max="600"
+            step="1"
+            inputmode="numeric"
+            autocomplete="off"
+          >
+          <button type="submit" class="x-scroll-limiter__button" data-i18n="popupButtonSave">
+            Save
+          </button>
+        </div>
+      </form>
+
+      <button
+        type="button"
+        id="x-scroll-limiter-reset-button"
+        class="x-scroll-limiter__button x-scroll-limiter__button--secondary"
+        data-i18n="popupButtonReset"
+      >Reset elapsed time</button>
+
+      <button
+        type="button"
+        id="x-scroll-limiter-share-button"
+        class="x-scroll-limiter__button x-scroll-limiter__button--share"
+        data-i18n="popupButtonShare"
+      >Share my X usage</button>
+
+      <div id="x-scroll-limiter-support" class="x-scroll-limiter__support">
+        <button
+          type="button"
+          id="x-scroll-limiter-support-button"
+          class="x-scroll-limiter__link x-scroll-limiter__link--support"
+          data-i18n="popupSupportDeveloper"
+        >☕ Buy me a coffee</button>
+        <p class="x-scroll-limiter__support-note" data-i18n="popupSupportNote">via Buy Me a Coffee</p>
+      </div>
+
+      <p id="x-scroll-limiter-status" class="x-scroll-limiter__status" role="status" aria-live="polite"></p>
+    </main>
+    <script src="../config.js"></script>
+    <script src="../shared.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

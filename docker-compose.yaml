@@ -1,0 +1,9 @@
+services:
+  dev:
+    build: .
+    image: x-off-dev
+    volumes:
+      - .:/app
+    working_dir: /app
+    tty: true
+    stdin_open: true

@@ -1,0 +1,31 @@
+# Build output
+dist/
+*.zip
+
+# mise local override
+.mise.local.toml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# AI agent local state（skills だけはチーム共有対象なので例外で残す）
+.claude/*
+!.claude/skills/
+
+# Local env
+.env
+.env.local
+
+# Chrome packaged extension key (機密)
+*.pem
+
+# ローカル専用の設定（BMC URL / 自分の Chrome Web Store URL 等）
+src/config.js
+

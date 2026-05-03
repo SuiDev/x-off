@@ -1,0 +1,102 @@
+{
+  "extName": {
+    "message": "X (Twitter) OFF: Daily Time Limit for X",
+    "description": "Name of the extension shown in the Chrome Web Store and toolbar tooltip."
+  },
+  "extDescription": {
+    "message": "Set a daily time limit on X. Active viewing is measured; scrolling is blocked when the cap is reached. You can lift it yourself.",
+    "description": "Short description of the extension."
+  },
+  "optionsTitle": {
+    "message": "X OFF — Settings"
+  },
+  "optionsHeading": {
+    "message": "Set your X time limit"
+  },
+  "optionsDescription": {
+    "message": "When you have spent this many minutes actively viewing X, scrolling will be blocked. Elapsed time accumulates as a daily total and resets automatically when the date changes."
+  },
+  "optionsLabelLimit": {
+    "message": "Time limit (minutes)"
+  },
+  "optionsHelpRange": {
+    "message": "Pick a value from 1 to 600 minutes."
+  },
+  "optionsButtonSave": {
+    "message": "Save"
+  },
+  "optionsSavedMessage": {
+    "message": "Saved. You can close this tab."
+  },
+  "optionsValidationError": {
+    "message": "Please enter a number between 1 and 600."
+  },
+  "popupTitle": {
+    "message": "X OFF"
+  },
+  "popupElapsedLabel": {
+    "message": "Elapsed"
+  },
+  "popupLimitLabel": {
+    "message": "Limit"
+  },
+  "popupRemainingLabel": {
+    "message": "Remaining"
+  },
+  "popupChangeLimitLabel": {
+    "message": "Change limit (minutes)"
+  },
+  "popupButtonSave": {
+    "message": "Save"
+  },
+  "popupButtonReset": {
+    "message": "Reset elapsed time"
+  },
+  "popupButtonShare": {
+    "message": "Share my X usage"
+  },
+  "popupNoLimitSet": {
+    "message": "No limit set yet — open the settings page to configure."
+  },
+  "popupResetSuccess": {
+    "message": "Elapsed time reset."
+  },
+  "popupSavedMessage": {
+    "message": "Limit updated."
+  },
+  "popupSupportDeveloper": {
+    "message": "☕ Support the developer"
+  },
+  "popupSupportNote": {
+    "message": "Tip if you find this useful"
+  },
+  "overlayTitle": {
+    "message": "Time's up on X"
+  },
+  "overlayMessage": {
+    "message": "You have reached the time limit you set for yourself."
+  },
+  "overlayElapsedDisplay": {
+    "message": "Active time today: $MINUTES$ min",
+    "placeholders": {
+      "minutes": { "content": "$1", "example": "30" }
+    }
+  },
+  "overlayHint": {
+    "message": "You're done for today. The timer resets when the date changes."
+  },
+  "shareTextWithLimit": {
+    "message": "X today: $MINUTES$ min (cap $LIMIT$ min)\nChoosing how I spend my time on X.\n#X_OFF\nUsing X OFF, a Chrome extension that caps your time on X.\n$LINK$",
+    "placeholders": {
+      "minutes": { "content": "$1", "example": "23" },
+      "limit":   { "content": "$2", "example": "30" },
+      "link":    { "content": "$3", "example": "https://chromewebstore.google.com/detail/x-off/..." }
+    }
+  },
+  "shareTextNoLimit": {
+    "message": "Choosing how I spend my time on X.\n#X_OFF\nUsing X OFF, a Chrome extension that caps your time on X.\n$LINK$",
+    "placeholders": {
+      "link": { "content": "$1", "example": "https://chromewebstore.google.com/detail/x-off/..." }
+    }
+  }
+}

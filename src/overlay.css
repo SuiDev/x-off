@@ -1,0 +1,63 @@
+@keyframes x-scroll-limiter-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes x-scroll-limiter-rise-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#x-scroll-limiter-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.94);
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans CJK JP", "Yu Gothic", sans-serif;
+  text-align: center;
+  padding: 24px;
+  box-sizing: border-box;
+  animation: x-scroll-limiter-fade-in 220ms ease-out both;
+  -webkit-font-smoothing: antialiased;
+}
+
+#x-scroll-limiter-overlay .x-scroll-limiter__inner {
+  max-width: 560px;
+  width: 100%;
+  animation: x-scroll-limiter-rise-in 320ms ease-out both;
+  /* 日本語の改行を文節境界で行います */
+  word-break: auto-phrase;
+  overflow-wrap: break-word;
+}
+
+#x-scroll-limiter-overlay .x-scroll-limiter__title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 16px;
+  color: #ffffff;
+}
+
+#x-scroll-limiter-overlay .x-scroll-limiter__message {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+#x-scroll-limiter-overlay .x-scroll-limiter__elapsed {
+  font-size: 16px;
+  margin: 0 0 16px;
+  color: #1d9bf0;
+  font-variant-numeric: tabular-nums;
+}
+
+#x-scroll-limiter-overlay .x-scroll-limiter__hint {
+  font-size: 14px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+}

@@ -1,0 +1,26 @@
+[tools]
+node = "24"
+
+[tasks.lint]
+description = "Chrome MV3 manifest と i18n の整合をチェックする"
+run = "node scripts/lint.js"
+
+[tasks.package]
+description = "dist/x-off-vX.Y.Z.zip を生成する"
+run = "bash scripts/package.sh"
+
+[tasks.icons]
+description = "src/icons/*.png を再生成する（赤丸 + 白斜線の placeholder）"
+run = "node scripts/generate-icons.js"
+
+[tasks.clean]
+description = "dist/ を削除する"
+run = "rm -rf dist"
+
+[tasks.release]
+description = "リリース前ルーチン: clean → lint → package を一括実行する"
+depends = ["clean", "lint", "package"]
+
+[settings]
+# 信頼確認のプロンプトを抑制（Docker 内での非対話実行のため）
+trusted_config_paths = ["/app"]

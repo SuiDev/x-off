@@ -1,0 +1,102 @@
+{
+  "extName": {
+    "message": "X (Twitter) OFF: 閲覧時間を制限",
+    "description": "Name of the extension shown in the Chrome Web Store and toolbar tooltip."
+  },
+  "extDescription": {
+    "message": "X (Twitter) に 1 日の閲覧時間の上限を設定。アクティブな閲覧時間が上限に達するとスクロールがブロックされます。上限はいつでも自分で変更できます。",
+    "description": "Short description of the extension."
+  },
+  "optionsTitle": {
+    "message": "X OFF — 設定"
+  },
+  "optionsHeading": {
+    "message": "X の閲覧時間の上限を設定する"
+  },
+  "optionsDescription": {
+    "message": "ここで指定した分数だけアクティブに X を閲覧すると、それ以降はスクロールがブロックされます。経過時間は 1 日の累計で記録され、日付が変わると自動でリセットされます。"
+  },
+  "optionsLabelLimit": {
+    "message": "上限分数"
+  },
+  "optionsHelpRange": {
+    "message": "1〜600 分の範囲で指定してください。"
+  },
+  "optionsButtonSave": {
+    "message": "保存"
+  },
+  "optionsSavedMessage": {
+    "message": "保存しました。このタブは閉じて構いません。"
+  },
+  "optionsValidationError": {
+    "message": "1〜600 の数値を入力してください。"
+  },
+  "popupTitle": {
+    "message": "X OFF"
+  },
+  "popupElapsedLabel": {
+    "message": "経過"
+  },
+  "popupLimitLabel": {
+    "message": "上限"
+  },
+  "popupRemainingLabel": {
+    "message": "残り"
+  },
+  "popupChangeLimitLabel": {
+    "message": "上限を変更（分）"
+  },
+  "popupButtonSave": {
+    "message": "保存"
+  },
+  "popupButtonReset": {
+    "message": "経過時間をリセット"
+  },
+  "popupButtonShare": {
+    "message": "今日の X 使い方をシェア"
+  },
+  "popupNoLimitSet": {
+    "message": "上限が未設定です。設定ページから設定してください。"
+  },
+  "popupResetSuccess": {
+    "message": "経過時間をリセットしました。"
+  },
+  "popupSavedMessage": {
+    "message": "上限を更新しました。"
+  },
+  "popupSupportDeveloper": {
+    "message": "☕ 開発者を応援する"
+  },
+  "popupSupportNote": {
+    "message": "気に入ったらコーヒー 1 杯ぶん応援"
+  },
+  "overlayTitle": {
+    "message": "今日の X はここまで"
+  },
+  "overlayMessage": {
+    "message": "自分で決めた閲覧時間の上限に達しました。"
+  },
+  "overlayElapsedDisplay": {
+    "message": "本日のアクティブ閲覧時間: $MINUTES$ 分",
+    "placeholders": {
+      "minutes": { "content": "$1", "example": "30" }
+    }
+  },
+  "overlayHint": {
+    "message": "今日の上限に達しました。日付が変わるまでお休みです。"
+  },
+  "shareTextWithLimit": {
+    "message": "今日のX利用時間: $MINUTES$ 分 (上限$LIMIT$分)\nX との付き合い方を、自分で決める。\n#X_OFF\nChrome 拡張「X OFF」で時間に上限を設けてます。\n$LINK$",
+    "placeholders": {
+      "minutes": { "content": "$1", "example": "23" },
+      "limit":   { "content": "$2", "example": "30" },
+      "link":    { "content": "$3", "example": "https://chromewebstore.google.com/detail/x-off/..." }
+    }
+  },
+  "shareTextNoLimit": {
+    "message": "X との付き合い方を、自分で決める。\n#X_OFF\nChrome 拡張「X OFF」で時間に上限を設けてます。\n$LINK$",
+    "placeholders": {
+      "link": { "content": "$1", "example": "https://chromewebstore.google.com/detail/x-off/..." }
+    }
+  }
+}

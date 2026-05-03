@@ -1,0 +1,124 @@
+:root {
+  color-scheme: light dark;
+  --x-scroll-limiter-bg: #f7f9f9;
+  --x-scroll-limiter-fg: #0f1419;
+  --x-scroll-limiter-muted: #536471;
+  --x-scroll-limiter-accent: #1d9bf0;
+  --x-scroll-limiter-accent-fg: #ffffff;
+  --x-scroll-limiter-error: #f4212e;
+  --x-scroll-limiter-success: #00ba7c;
+  --x-scroll-limiter-border: #cfd9de;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --x-scroll-limiter-bg: #0f1419;
+    --x-scroll-limiter-fg: #e7e9ea;
+    --x-scroll-limiter-muted: #71767b;
+    --x-scroll-limiter-border: #2f3336;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* スクロールバーは隠す */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0;
+  background: var(--x-scroll-limiter-bg);
+  color: var(--x-scroll-limiter-fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans CJK JP", "Yu Gothic", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  /* 日本語の改行を文節境界で行います */
+  word-break: auto-phrase;
+  overflow-wrap: break-word;
+}
+
+.x-scroll-limiter__container {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.x-scroll-limiter__description {
+  color: var(--x-scroll-limiter-muted);
+  margin: 0 0 32px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 18px;
+  border: 1px solid var(--x-scroll-limiter-border);
+  border-radius: 8px;
+  background: var(--x-scroll-limiter-bg);
+  color: var(--x-scroll-limiter-fg);
+  appearance: textfield;
+}
+
+input[type="number"]:focus {
+  outline: 2px solid var(--x-scroll-limiter-accent);
+  outline-offset: 1px;
+}
+
+.x-scroll-limiter__help {
+  color: var(--x-scroll-limiter-muted);
+  font-size: 14px;
+  margin: 8px 0 24px;
+}
+
+.x-scroll-limiter__button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  background: var(--x-scroll-limiter-accent);
+  color: var(--x-scroll-limiter-accent-fg);
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.x-scroll-limiter__button:hover {
+  filter: brightness(1.05);
+}
+
+.x-scroll-limiter__button:active {
+  filter: brightness(0.95);
+}
+
+.x-scroll-limiter__status {
+  margin-top: 24px;
+  font-size: 14px;
+  min-height: 1.6em;
+  color: var(--x-scroll-limiter-success);
+}
+
+.x-scroll-limiter__status--error {
+  color: var(--x-scroll-limiter-error);
+}

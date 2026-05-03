@@ -1,0 +1,220 @@
+:root {
+  color-scheme: light dark;
+  --x-scroll-limiter-bg: #ffffff;
+  --x-scroll-limiter-fg: #0f1419;
+  --x-scroll-limiter-muted: #536471;
+  --x-scroll-limiter-accent: #1d9bf0;
+  --x-scroll-limiter-accent-fg: #ffffff;
+  --x-scroll-limiter-error: #f4212e;
+  --x-scroll-limiter-success: #00ba7c;
+  --x-scroll-limiter-border: #cfd9de;
+  --x-scroll-limiter-stat-bg: #f7f9f9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --x-scroll-limiter-bg: #15202b;
+    --x-scroll-limiter-fg: #e7e9ea;
+    --x-scroll-limiter-muted: #8b98a5;
+    --x-scroll-limiter-border: #2f3336;
+    --x-scroll-limiter-stat-bg: #1c2732;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  /* スクロールバーは隠す（拡張機能 UI では出したくないという指針） */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  width: 320px;
+  background: var(--x-scroll-limiter-bg);
+  color: var(--x-scroll-limiter-fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans CJK JP", "Yu Gothic", sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  /* 日本語の改行を文節境界で行います（CJK 親和、未対応ブラウザは keep-all 相当へフォールバック） */
+  word-break: auto-phrase;
+  overflow-wrap: break-word;
+}
+
+.x-scroll-limiter__container {
+  padding: 16px;
+}
+
+.x-scroll-limiter__heading {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.x-scroll-limiter__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.x-scroll-limiter__stat {
+  background: var(--x-scroll-limiter-stat-bg);
+  border-radius: 8px;
+  padding: 8px 6px;
+  text-align: center;
+}
+
+.x-scroll-limiter__stat-label {
+  display: block;
+  font-size: 11px;
+  color: var(--x-scroll-limiter-muted);
+  margin-bottom: 4px;
+}
+
+.x-scroll-limiter__stat-value {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--x-scroll-limiter-fg);
+}
+
+.x-scroll-limiter__stat--exceeded .x-scroll-limiter__stat-value {
+  color: var(--x-scroll-limiter-error);
+}
+
+.x-scroll-limiter__notice {
+  background: var(--x-scroll-limiter-stat-bg);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--x-scroll-limiter-muted);
+}
+
+.x-scroll-limiter__form {
+  margin-bottom: 12px;
+}
+
+.x-scroll-limiter__form label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--x-scroll-limiter-muted);
+}
+
+.x-scroll-limiter__input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.x-scroll-limiter__input-row input[type="number"] {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid var(--x-scroll-limiter-border);
+  border-radius: 9999px;
+  background: var(--x-scroll-limiter-bg);
+  color: var(--x-scroll-limiter-fg);
+  appearance: textfield;
+}
+
+.x-scroll-limiter__input-row input[type="number"]:focus {
+  outline: 2px solid var(--x-scroll-limiter-accent);
+  outline-offset: 1px;
+}
+
+.x-scroll-limiter__button {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--x-scroll-limiter-accent);
+  color: var(--x-scroll-limiter-accent-fg);
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.x-scroll-limiter__button:hover {
+  filter: brightness(1.05);
+}
+
+.x-scroll-limiter__button:active {
+  filter: brightness(0.95);
+}
+
+.x-scroll-limiter__button--share {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.x-scroll-limiter__button--secondary {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  background: transparent;
+  color: var(--x-scroll-limiter-fg);
+  border: 1px solid var(--x-scroll-limiter-border);
+}
+
+.x-scroll-limiter__link {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  background: transparent;
+  color: var(--x-scroll-limiter-accent);
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.x-scroll-limiter__support {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--x-scroll-limiter-border);
+  text-align: center;
+}
+
+.x-scroll-limiter__link--support {
+  margin-top: 0;
+  padding: 6px 0 2px;
+  color: var(--x-scroll-limiter-fg);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.x-scroll-limiter__link--support:hover {
+  color: var(--x-scroll-limiter-accent);
+}
+
+.x-scroll-limiter__support-note {
+  margin: 0 0 4px;
+  font-size: 11px;
+  color: var(--x-scroll-limiter-muted);
+}
+
+.x-scroll-limiter__status {
+  margin: 12px 0 0;
+  font-size: 12px;
+  min-height: 1.4em;
+  color: var(--x-scroll-limiter-success);
+}
+
+.x-scroll-limiter__status--error {
+  color: var(--x-scroll-limiter-error);
+}

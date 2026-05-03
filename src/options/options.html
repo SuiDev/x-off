@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title data-i18n="optionsTitle">X Scroll Limiter — Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="x-scroll-limiter__container">
+      <h1 data-i18n="optionsHeading">Set your X scroll limit</h1>
+      <p class="x-scroll-limiter__description" data-i18n="optionsDescription">
+        When you have spent this many minutes actively viewing X, scrolling will be blocked.
+      </p>
+
+      <form id="x-scroll-limiter-form" novalidate>
+        <label for="x-scroll-limiter-limit-input" data-i18n="optionsLabelLimit">Time limit (minutes)</label>
+        <input
+          type="number"
+          id="x-scroll-limiter-limit-input"
+          min="1"
+          max="600"
+          step="1"
+          inputmode="numeric"
+          autocomplete="off"
+          required
+        >
+        <p class="x-scroll-limiter__help" data-i18n="optionsHelpRange">Pick a value from 1 to 600 minutes.</p>
+        <button type="submit" class="x-scroll-limiter__button" data-i18n="optionsButtonSave">Save</button>
+      </form>
+
+      <p id="x-scroll-limiter-status" class="x-scroll-limiter__status" role="status" aria-live="polite"></p>
+    </main>
+    <script src="../config.js"></script>
+    <script src="../shared.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
