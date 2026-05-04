@@ -14,9 +14,9 @@ X で過ごす時間を有限にする Chrome 拡張機能です。
 
 ## インストール
 
-### Chrome Web Store からのインストール（公開後）
+### Chrome Web Store からのインストール
 
-公開後にここに Chrome Web Store の URL を追記します。
+[Chrome Web Store の X (Twitter) OFF ページ](https://chromewebstore.google.com/detail/x-off/aoepocnfnikacllkjopecddljpcjfmah)を開き、「Chrome に追加」ボタンを押してください。
 
 ### 開発版のインストール
 

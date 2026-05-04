@@ -28,12 +28,24 @@ jobs:
 
       - name: Stage only PRIVACY.md as the site source
         run: |
-          mkdir -p pages-src/privacy-policy
+          mkdir -p pages-src/privacy-policy pages-src/_includes
           cp docs/PRIVACY.md pages-src/privacy-policy/index.md
           cat > pages-src/_config.yml <<'YML'
           title: X OFF Privacy Policy
           description: Privacy policy for the X OFF Chrome extension.
           YML
+          cat > pages-src/_includes/footer.html <<'HTML'
+          <footer class="site-footer h-card">
+            <div class="wrapper">
+              <p>
+                This page is open source.
+                <a href="https://github.com/SuiDev/x-off/edit/main/docs/PRIVACY.md">Improve this page</a>
+                &middot;
+                <a href="https://github.com/SuiDev/x-off/issues">Report an issue</a>
+              </p>
+            </div>
+          </footer>
+          HTML
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

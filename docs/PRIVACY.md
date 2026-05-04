@@ -49,7 +49,7 @@ X OFF（以下「本拡張機能」）は、ユーザーのプライバシーを
 
 ## 7. 連絡先
 
-本ポリシーに関するお問い合わせは、リポジトリの Issue までお願いします。
+本ポリシーに関するお問い合わせは、リポジトリの [Issue](https://github.com/SuiDev/x-off/issues) までお願いします。
 
 ---
 
@@ -100,4 +100,4 @@ If we change this policy, we will note the update in this file and in the extens
 
 ## 7. Contact
 
-For questions about this policy, please open an issue in this repository.
+For questions about this policy, please open an [issue](https://github.com/SuiDev/x-off/issues) in this repository.
